@@ -268,6 +268,7 @@ class NewsFeed extends Component {
 
           //updating the loading state to false
         });
+        // alert(this.state.getuserid)
         { this.exploredataPic(this.state.getuserid) }
 
         console.warn(responseJson)
@@ -454,6 +455,7 @@ class NewsFeed extends Component {
     feeding = feeding.map(e => {
       if (item.TypeID === e.TypeID) {
         // item.like = !e.like;
+        AsyncStorage.setItem('typeid',JSON.stringify(Number(this.state.getuserid)));
         AsyncStorage.setItem('typeid',JSON.stringify(Number( item.TypeID)));
         AsyncStorage.setItem('postid', JSON.stringify(Number(item.Post_Page_Id)));
         AsyncStorage.setItem('pagefeed_userid', item.UserID);
@@ -692,7 +694,7 @@ class NewsFeed extends Component {
     setTimeout(() => {
       console.log('pagefeed user id is ', this.state.getuserid);
       { this.exploredata() }
-    }, 1000)
+    }, 2000)
   }
   toast = () => {
     this.setState({ toastvisible: true })

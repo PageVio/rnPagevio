@@ -23,7 +23,10 @@ target 'PageVio' do
 
   pod 'RNSnackbar', :path => '../node_modules/react-native-snackbar'
 
+
   pod 'RNGoogleSignin', :path => '../node_modules/@react-native-community/google-signin'
+
+  pod 'react-native-fbsdk', :path => '../node_modules/react-native-fbsdk'
 
   target 'PageVioTests' do
     inherit! :complete

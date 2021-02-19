@@ -4,6 +4,8 @@ import { StyleSheet, Text, Image, View, Animated } from "react-native";
 
 import { getTouchableComponent } from "./utils/touchable";
 
+// import { getTouchableComponent } from "../node_modules/react-native-floating-action/src/utils/touchable";
+let buttonSize1;
 class FloatingActionItem extends Component {
   constructor(props) {
     super(props);
@@ -15,8 +17,7 @@ class FloatingActionItem extends Component {
 
     if (prevProps.active !== active && animated) {
       Animated.spring(this.animation, {
-        toValue: active ? 1 : 0,
-        useNativeDriver: false
+        toValue: active ? 1 : 0
       }).start();
     }
   }
@@ -88,6 +89,7 @@ class FloatingActionItem extends Component {
               },
               textStyle
             ]}
+            numberOfLines={2}
             {...textProps}
           >
             {text}
@@ -101,7 +103,7 @@ class FloatingActionItem extends Component {
 
   renderButton() {
     const { buttonSize, icon, color, shadow, tintColor } = this.props;
-
+    buttonSize1=buttonSize;
     let iconStyle;
 
     if (icon && icon.uri) {
@@ -113,6 +115,7 @@ class FloatingActionItem extends Component {
     const propStyles = {
       tintColor: tintColor,
       backgroundColor: color,
+      marginLeft:-38,
       width: buttonSize,
       height: buttonSize,
       borderRadius: buttonSize / 2
@@ -154,7 +157,9 @@ class FloatingActionItem extends Component {
         })
       };
     } else {
-      animatedActionContainerStyle = { marginBottom: 10 };
+      animatedActionContainerStyle = {
+        marginBottom: 10 
+      };
     }
 
     const components = [];
@@ -167,7 +172,7 @@ class FloatingActionItem extends Component {
         components.push(this.renderButton());
         components.push(this.renderText());
       }
-      distanceToEdgeActionContainer.paddingLeft = this.distanceToHorizontalEdge + margin;
+      distanceToEdgeActionContainer.paddingLeft = this.distanceToHorizontalEdge;
     } else if (position === "right") {
       if (render) {
         components.push(render({ key: name }));
@@ -175,7 +180,9 @@ class FloatingActionItem extends Component {
         components.push(this.renderText());
         components.push(this.renderButton());
       }
-      distanceToEdgeActionContainer.paddingRight = this.distanceToHorizontalEdge + margin;
+      // distanceToEdgeActionContainer.paddingRight = this.distanceToHorizontalEdge + margin;
+      distanceToEdgeActionContainer.paddingRight = this.distanceToHorizontalEdge;
+
     } else if (render) {
       components.push(render({ key: name }));
     } else {
@@ -228,6 +235,7 @@ FloatingActionItem.propTypes = {
     shadowColor: PropTypes.string,
     shadowRadius: PropTypes.number
   }),
+  // not on doc
   textElevation: PropTypes.number,
   // not modified by user
   position: PropTypes.oneOf(["left", "right", "center"]),
@@ -242,19 +250,21 @@ FloatingActionItem.propTypes = {
   paddingTopBottom: PropTypes.number, // modified by parent property "actionsPaddingTopBottom"
   onPress: PropTypes.func,
   render: PropTypes.func,
+  // margin: PropTypes.number,
   margin: PropTypes.number,
+
   animated: PropTypes.bool
 };
 
 FloatingActionItem.defaultProps = {
   tintColor: '#fff',
-  color: "#1253bc",
+  color: "#24D4BC",
   distanceToEdge: 30,
   buttonSize: 40,
   textElevation: 5,
   textColor: "#444444",
   textBackground: "#ffffff",
-  margin: 8,
+  margin: 0,
   shadow: {
     shadowOpacity: 0.35,
     shadowOffset: {
@@ -283,18 +293,32 @@ const styles = StyleSheet.create({
   textContainer: {
     paddingHorizontal: 8,
     elevation: 5,
-    borderRadius: 4,
-    height: 22
+    height: 42,
+    // alignItems:'center',
+    justifyContent:'center',
+    // textAlign:'center',
+    width:135,
+    paddingLeft:8,
+    // marginRight:10,
+    // padding:5,
+    borderRadius:20,
+    borderColor:"#27A291",
+    borderWidth:1,
   },
   leftTextContainer: {
-    marginLeft: 14
+    marginLeft: 0
   },
   rightTextContainer: {
-    marginRight: 14
+    marginRight: 0
   },
   text: {
-    fontSize: 14,
-    lineHeight: 20
+    fontSize: 12,
+    lineHeight: 18,
+    width:80,
+    paddingLeft:10,
+    textAlign:'left',
+    fontFamily:'AzoSans-Regular'
+
   },
   button: {
     alignItems: "center",

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.florent37:viewtooltip:1.1.6@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aab0e9051122a8a9def6f9c5273ab72a/jetified-viewtooltip-1.1.6/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aab0e9051122a8a9def6f9c5273ab72a/jetified-viewtooltip-1.1.6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/84c7540aae1857d1bd6aa8f7aa1b4466/jetified-viewtooltip-1.1.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/84c7540aae1857d1bd6aa8f7aa1b4466/jetified-viewtooltip-1.1.6/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

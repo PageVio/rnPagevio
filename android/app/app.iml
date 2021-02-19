@@ -19,7 +19,7 @@
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/build/generated/res/resValues/debug" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res" />
         <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
@@ -100,13 +100,14 @@
     <orderEntry type="library" name="Gradle: androidx.collection:collection:1.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-common:2.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.arch.core:core-common:2.1.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.annotation:annotation:1.2.0-alpha01@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.annotation:annotation:1.2.0-beta01@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.yoga:proguard-annotations:1.14.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp-urlconnection:3.12.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.12.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.15.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fbjni:fbjni-java-only:0.0.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:./../node_modules/hermes-engine/android/hermes-debug.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.multidex:multidex:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.flipper:flipper:0.37.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.react:react-native:0.63.2@aar" level="project" />
@@ -123,7 +124,7 @@
     <orderEntry type="library" name="Gradle: androidx.vectordrawable:vectordrawable-animated:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.vectordrawable:vectordrawable:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.customview:customview:1.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.core:core:1.5.0-alpha04@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.core:core:1.5.0-beta01@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.interpolator:interpolator:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.cursoradapter:cursoradapter:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.versionedparcelable:versionedparcelable:1.1.0@aar" level="project" />
@@ -148,30 +149,32 @@
     <orderEntry type="library" name="Gradle: com.facebook.fresco:nativeimagetranscoder:2.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:animated-gif:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:imagepipeline-okhttp3:2.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: org.webkit:android-jsc:r245459@aar" level="project" />
-    <orderEntry type="module" module-name="astrocoders_react-native-selectable-text" />
-    <orderEntry type="module" module-name="react-native-image-picker" />
-    <orderEntry type="module" module-name="react-native-community_clipboard" />
-    <orderEntry type="module" module-name="react-native-community_masked-view" />
-    <orderEntry type="module" module-name="react-native-community_netinfo" />
-    <orderEntry type="module" module-name="react-native-community_progress-bar-android" />
-    <orderEntry type="module" module-name="react-native-community_toolbar-android" />
-    <orderEntry type="module" module-name="react-native-camera" />
-    <orderEntry type="module" module-name="react-native-permissions-android-react-native-permissions" />
-    <orderEntry type="module" module-name="react-native-snackbar" />
-    <orderEntry type="module" module-name="react-native-appearance" />
-    <orderEntry type="module" module-name="react-native-cardview" />
-    <orderEntry type="module" module-name="react-native-dark-mode" />
-    <orderEntry type="module" module-name="react-native-gesture-handler" />
-    <orderEntry type="module" module-name="react-native-image-base64" />
-    <orderEntry type="module" module-name="react-native-linear-gradient" />
-    <orderEntry type="module" module-name="react-native-reanimated" />
-    <orderEntry type="module" module-name="react-native-safe-area-context" />
-    <orderEntry type="module" module-name="react-native-screens" />
-    <orderEntry type="module" module-name="react-native-share" />
+    <orderEntry type="module" module-name="android-astrocoders_react-native-selectable-text" />
+    <orderEntry type="module" module-name="react-native-firebase_app" />
+    <orderEntry type="module" module-name="android-react-native-image-picker" />
+    <orderEntry type="module" module-name="react-native-community_async-storage" />
+    <orderEntry type="module" module-name="android-react-native-community_clipboard" />
+    <orderEntry type="module" module-name="react-native-community_google-signin" />
+    <orderEntry type="module" module-name="android-react-native-community_masked-view" />
+    <orderEntry type="module" module-name="android-react-native-community_netinfo" />
+    <orderEntry type="module" module-name="progress-bar-android-react-native-community_progress-bar-android" />
+    <orderEntry type="module" module-name="toolbar-android-react-native-community_toolbar-android" />
+    <orderEntry type="module" module-name="android-react-native-camera" />
+    <orderEntry type="module" module-name="node_modules-react-native-permissions-android-react-native-permissions" />
+    <orderEntry type="module" module-name="android-react-native-snackbar" />
+    <orderEntry type="module" module-name="android-react-native-appearance" />
+    <orderEntry type="module" module-name="android-react-native-cardview" />
+    <orderEntry type="module" module-name="android-react-native-dark-mode" />
+    <orderEntry type="module" module-name="android-react-native-gesture-handler" />
+    <orderEntry type="module" module-name="android-react-native-image-base64" />
+    <orderEntry type="module" module-name="android-react-native-linear-gradient" />
+    <orderEntry type="module" module-name="android-react-native-reanimated" />
+    <orderEntry type="module" module-name="android-react-native-safe-area-context" />
+    <orderEntry type="module" module-name="android-react-native-screens" />
+    <orderEntry type="module" module-name="android-react-native-share" />
     <orderEntry type="module" module-name="react-native-svg" />
-    <orderEntry type="module" module-name="react-native-tooltips" />
-    <orderEntry type="module" module-name="react-native-vector-icons" />
-    <orderEntry type="module" module-name="android-react-native-webview" />
+    <orderEntry type="module" module-name="android-react-native-tooltips" />
+    <orderEntry type="module" module-name="android-react-native-vector-icons" />
+    <orderEntry type="module" module-name="react-native-webview-android-react-native-webview" />
   </component>
 </module>

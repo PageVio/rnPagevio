@@ -881,20 +881,47 @@ readsItems({ item }) {
           onRequestClose={() => {
             console.log('Modal has been closed.');
           }}> */}
-              <BlurModal visible={this.state.readsRemovePopup}
+            <BlurModal visible={this.state.readsRemovePopup}
+          children={  <View style={{
+            left:0,right:0,bottom:0,position:'absolute',  
+            height:'10%', 
+            alignItems:'center',
+            justifyContent:'center',
+            backgroundColor: '#E74C3C',
+  }}>
+         
+         <View style={{flexDirection:'row',justifyContent:'center'}}>
+                <Text style={{color:'#fff',fontSize:16,fontFamily:'AzoSans-Bold',textAlign:'center',}} >Removed - </Text>
+                <TouchableOpacity onPress={()=>this.descPage(this.state.currentItem)}>
+
+           <Text numberOfLines={2} style={{ fontSize: 16,textAlign:'center', color: '#fff',width:this.state.readsDeletedName.length<10?width/4:width/3}}> 
+          {this.state.readsDeletedName}</Text>
+          </TouchableOpacity>
+          <Text  style={{ fontSize: 16,textAlign:'left', color: '#fff',textAlign:'left',fontFamily:'AzoSans-Light',}}> from </Text>
+          <TouchableOpacity onPress={()=>this.props.navigation.goBack()}>
+            <Text numberOfLines={1} style={{ fontSize: 16,textAlign:'left', color: '#fff',textAlign:'left',textDecorationLine:'underline',fontFamily:'AzoSans-Light',textDecorationColor:'#fff',width:width/3}}>{this.state.coll_name}</Text>
+          </TouchableOpacity>
+              </View>         
+           
+          <TouchableOpacity style={{marginTop:'2%',alignSelf:'flex-end',marginRight:'4%'}} 
+              onPress={()=>this.setState({removeUndo:true})}          >
+              <Text style={{fontSize: 16,fontFamily:'AzoSans-Regular',color: '#fff',textDecorationLine:'underline'}}>Undo</Text>
+           </TouchableOpacity>
+            
+            </View>}
+          // }}
+          />
+              {/* <BlurModal visible={this.state.readsRemovePopup}
           children={
             <View style={{
           left:0,right:0,bottom:0,position:'absolute',   
           height:'8%',
           backgroundColor: '#E74C3C',
           flexDirection:'row',
-          // width:width,
           flex:0.8
           
-          // padding:'1%',
          }}>
            <View style={{flexDirection:'row',
-          //  margin:'1%',
            alignSelf:'center',  alignItems: 'center',
            width:width-20,
           justifyContent:'center',}}>
@@ -914,7 +941,7 @@ readsItems({ item }) {
             <Text style={{fontSize: 16,color:'white',width:50,textDecorationLine:'underline',textAlign:'center'}}>Undo</Text>
          </TouchableOpacity>
        </View>
-          }/>
+          }/> */}
 
 {/* <BlurModal visible={this.state.readsRemovePopup}
           children={

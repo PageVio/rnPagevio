@@ -15,10 +15,12 @@ import {
   GoogleSigninButton,
   statusCodes,
 } from '@react-native-community/google-signin';
+import FBSDK, { LoginManager } from 'react-native-fbsdk';
+
 GoogleSignin.configure({
      
-   androidClientId:'501574110793-mdgjt70e54a2m19n5i2up27mugeij7up.apps.googleusercontent.com',
-   webClientId:'501574110793-paiitvldqh6c5npu5lbmsofavls86hej.apps.googleusercontent.com',
+   androidClientId:'77326004036-1gnis6vfoqdemse1ldisjmmvavgd7ff9.apps.googleusercontent.com',
+   webClientId:'77326004036-meh485e8kjoa5fcdcstkm4ks4cm46bos.apps.googleusercontent.com',
    offlineAccess: true,
   //   hostedDomain: '', 
   // loginHint: '', // [iOS] The user's ID, or email address, to be prefilled in the authentication UI if possible. [See docs here](https://developers.google.com/identity/sign-in/ios/api/interface_g_i_d_sign_in.html#a0a68c7504c31ab0b728432565f6e33fd)
@@ -86,6 +88,24 @@ handleBackButtonClick() {
   BackHandler.exitApp();
   return true;
 }
+handleFacebookLogin() {
+  // alert(LoginManager.getLoginBehavior())
+  console.log('login behaviours ',LoginManager.getLoginBehavior())
+    LoginManager.logInWithPermissions(['public_profile']).then(
+        function (result) {
+          alert(result)
+            if (result.isCancelled) {
+                console.log('Login cancelled')
+            } else {
+                console.log('Login success with permissions: ' + result.grantedPermissions.toString())
+            }
+        },
+        function (error) {
+            console.log('Login fail with error: ' + error)
+        }
+    )
+}
+
 google_signIn = async() => {
   try{
    
@@ -95,6 +115,16 @@ google_signIn = async() => {
     // loaded:true
   })
   if(this.state.userGoogleInfo.user.name!=""){
+    AsyncStorage.setItem('userid',JSON.stringify(Number("")));
+    AsyncStorage.setItem('typeid',JSON.stringify(Number("")));
+    AsyncStorage.setItem('profile_img',JSON.stringify(Number("")));
+    AsyncStorage.setItem('postid',JSON.stringify(Number("")));
+    AsyncStorage.setItem('collectionId',JSON.stringify(Number("")));
+    AsyncStorage.setItem('sectionId',JSON.stringify(Number("")));
+    AsyncStorage.setItem('usertype',JSON.stringify(Number("")));
+    AsyncStorage.setItem('bookmarkUserid',JSON.stringify(Number("")));
+    AsyncStorage.setItem('loginData', JSON.stringify(false));
+    AsyncStorage.setItem('explore_page',JSON.stringify(0));
     this.props.navigation.navigate('mainpage')
   }
    console.log('userifo',userInfo)
@@ -322,12 +352,14 @@ console.warn(json+"")
             onSubmitEditing={()=>this.setState({borderEmail:false})}
             placeholder='Email'
             autoCapitalize='none'
+            maxLength={30}
+            
             placeholderTextColor='#CCCCCC'
             onChangeText={val => this.onChangeText('email',val)}
             value={this.state.email}
           />
          <TextInput
-            style={[this.state.password==''?styles.input:styles.input1,{borderColor: !this.state.borderPass?'#CCCCCC28':'#27A291' }]}
+            style={[this.state.password==''? styles.input : styles.input1,{borderColor: !this.state.borderPass?'#CCCCCC28':'#27A291' }]}
             onFocus={()=>this.setState({borderPass:true,})}
             onBlur={()=>this.setState({borderPass:true})}
             onSubmitEditing={()=>this.setState({borderPass:false})}
@@ -338,7 +370,6 @@ console.warn(json+"")
             onChangeText={val => this.onChangeText('password', val)}
             value={this.state.password}
             onSubmitEditing={()=>this.CheckConnectivity()}
-
           />
             <TouchableOpacity
             onPress={()=>this.CheckConnectivity()}>
@@ -365,7 +396,7 @@ console.warn(json+"")
             </View>
           <View style={styles.logoContainer}>
             <TouchableOpacity 
-            // onPress={this.fbAuth.bind(this)}
+            onPress={()=>this.handleFacebookLogin()}
             >
             <Image style={styles.avatar}
               source={require('../assets/img/fb.png')}

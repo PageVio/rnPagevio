@@ -206,20 +206,21 @@ this.CheckConnectivity()
     AsyncStorage.getItem('contentTopage').then((value) => this.setState({ contentToRead: value })).done();
     AsyncStorage.getItem('explore_page').then((value) => this.setState({ explore_page : value })).done();
     // this.setState({loading:false})
-    {this.props.collSec==true?this.getData2():null}
     // InteractionManager.runAfterInteractions(() => {
     //   this.setState({interactionsComplete: true});
     // });
     // AsyncStorage.getItem('popup_name1').then((newval1) => this.setState({ popup_title1: newval1 })).done();
     this.CheckConnectivity();
-    // this.focusListener = this.props.navigation.addListener('willFocus', () => {
-    //   if(this.props.collSec==true){
-    //     console.log('coll sec value in read page ',this.props.collSec)
-    //       {this.getData2()}
+    {this.props.collSec==true?this.getData2():null}
+
+    this.focusListener = this.props.navigation.addListener('willFocus', () => {
+      if(this.props.collSec==true){
+        console.log('coll sec value in read page ',this.props.collSec)
+          {this.getData2()}
   
-    //    }
-    //     // this.CheckConnectivity();
-    //   })
+       }
+        this.CheckConnectivity();
+      })
   
     // { this.getData() }
     // this.CheckConnectivity();
@@ -466,7 +467,7 @@ readlater = () => {
       //   })
       // }
       // { this.exploredata(this.state.gettypeid, this.state.getpostid) }
-    }, 1000);
+    }, 5000);
   }
   // exploredata(postid,typeid,pagecount){
   //   console.log('josn postid,typeid, pagingcount ',postid,typeid,pagecount)
@@ -479,7 +480,6 @@ readlater = () => {
   // var finalData = json.replace(/\\/g,"");
   // // console.log(decode, typeof decoded);
   // console.log('json data in reading page ',finalData)
-
   //     // console.log('json data in reading page ',json)
   //     fetch("http://162.250.120.20:444/Login/ReadPages",
   //       {
